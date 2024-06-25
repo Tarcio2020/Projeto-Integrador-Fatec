@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calendário</title>
+	
+	<link rel="stylesheet" href="style.css">
+
+	<script src="main.js" defer></script>
+</head>
+
+<body>
+	<header>
+        <div class="topo">
+            <div class="logo"><h1>SeniorCare </h1><p>ASSISTENTE</p></div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="/index.html">Início</a></li>
+                    <li><a href="/index.html#Funções">Funções</a></li>
+                    <li><a href="/index.html#Interface">Interface</a></li>
+                    <li><a href="/sobreNos.html">Sobre nós</a></li>
+                </ul>
+            </nav>
+            <div class="user">
+                <a href="login.html"><i class='bx bx-user-circle' ></i></a>
+            </div>
+        </div>
+    </header>
+	<div class="usuario">
+		<div class="info-idoso">
+			<img src="14.jpg" alt="Foto do Idoso">
+			<h2>Nome do Idoso</h2>
+			<p>Tipo Sanguíneo: AB+</p>
+			<p>Responsável: Fulano de Tal</p>
+		</div>
+	</div>
+	<div class="principal">
+		<div class="divone">
+			<!-- Lista de Botões -->
+			<div class="lista-botoes">
+				<button type="button" class="btn">Configuração da Agenda</button>
+				<button type="button" class="btn">Adicionar Mardicamentos</button>
+				<button type="button" class="btn">Ver Estatistica</button>
+				<button type="button" class="btn">Contato de Emergência</button>
+				<button type="button" class="btn">Informação do Idoso</button>
+				<button type="button" class="btn">Observações</button>
+			</div>
+		</div>
+		<div class="divtwo">
+			<!-- Lista de Remédios -->
+			<div class="lista-remedios">
+				<div class="remedio">
+					<h3>Remédio 1</h3>
+					<p>Descrição do Remédio 1.</p>
+				</div>
+				<div class="remedio">
+					<h3>Remédio 2</h3>
+					<p>Descrição do Remédio 2.</p>
+				</div>
+				<div class="remedio">
+					<h3>Remédio 3</h3>
+					<p>Descrição do Remédio 3.</p>
+				</div>
+				<div class="remedio">
+					<h3>Remédio 4</h3>
+					<p>Descrição do Remédio 4.</p>
+				</div>
+				<div class="remedio">
+					<h3>Remédio 5</h3>
+					<p>Descrição do Remédio 5.</p>
+				</div>
+				<div class="remedio">
+					<h3>Remédio 6</h3>
+					<p>Descrição do Remédio 6.</p>
+				</div>
+				<div class="remedio">
+					<h3>Remédio 7</h3>
+					<p>Descrição do Remédio 7.</p>
+				</div>
+				<div class="remedio">
+					<h3>Remédio 8</h3>
+					<p>Descrição do Remédio 8.</p>
+				</div>
+				<div class="remedio">
+					<h3>Remédio 9</h3>
+					<p>Descrição do Remédio 9.</p>
+				</div>
+				<div class="remedio">
+					<h3>Remédio 10</h3>
+					<p>Descrição do Remédio 10.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+<div id="sos">
+	<div id="calendario-container">
+		<div class="calendario">
+			<!-- HEADER -->
+			<header class="calendario-header">
+				<div class="box-left">
+					<button type="button" class="inp-date" onclick="goToToday();">&#8635;</button>
+					<div class="dropdown-box anos">
+						<button type="button" class="trigger btn-open-year btn-primary"></button>
+						<ul class="drop select-year">
+							<!-- Conteúdo dos anos -->
+						</ul>
+					</div>
+				</div>
+	
+				<div class="header-content">
+					<button type="button" class="btn-slide-month btn-primary" onclick="slideMes(-1)">&lt;</button>
+					<div class="dropdown-box meses">
+						<button type="button" class="trigger btn-open-month btn-primary"></button>
+						<ul class="drop select-month">
+							<!-- Conteúdo dos meses -->
+						</ul>
+					</div>
+					<button type="button" class="btn-slide-month btn-primary" onclick="slideMes(+1)">&gt;</button>
+				</div>
+				
+			</header>
+	
+			<!-- CONTENT -->
+			<div class="content">
+				<div class="desc"></div>
+				<div class="dias"></div>
+			</div>
+		</div>
+	</div>
+
+</div>
+<footer class="rodape">
+	<p class="direitos">Todos os direitos reservados &copy; 2024 SeniorCare</p>
+</div>
+</footer>
+</body>
+</html>
