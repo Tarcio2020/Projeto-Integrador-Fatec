@@ -14,270 +14,286 @@ html {
     scroll-behavior: smooth;
 }
 
-header .topo{
+header .topo {
     width: 100%;
     height: 75px;
     background-color: #1FA383;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 20px;
 }
 
-header .topo .logo{
-    width: 70px;
-    height: 70px;
-    margin: 20px 0 0 15px;
+header .topo .logo {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
 }
 
-.logo h1{
+.logo h1 {
     font-family: 'Dancing Script', sans-serif;
     font-size: 25px;
     color: #fff;
 }
 
-.logo p{
+.logo p {
     font-size: 12px;
     color: #fff;
     margin-left: 10px;
 }
 
-header .topo .nav ul li{
-    display: inline;
-    margin: 0 20px;
+header .topo .nav ul {
+    display: flex;
+    list-style: none;
 }
 
-header .topo .nav ul li a{
+header .topo .nav ul li {
+    margin: 0 10px;
+}
+
+header .topo .nav ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
     margin-top: 30px;
 }
 
-header .topo .nav ul li a:hover{
+header .topo .nav ul li a:hover {
     font-size: 22px;
 }
 
-header .topo .user{
-    width: 64px;
-    height: 64px;
-    text-align: center;
+header .topo .user {
+    display: flex;
+    align-items: center;
     cursor: pointer;
 }
 
-.user i{
+.user i {
     font-size: 40px;
     text-decoration: none;
     color: #fff;
     margin-top: 10px;
 }
 
-.sec-1{
+.sec-1 {
     width: 100%;
     height: auto;
 }
 
-.sec-1 .banner{
+.sec-1 .banner {
     width: 100%;
     height: auto;
     color: #000;
     display: flex;
-    gap: 18rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    text-align: center;
+    padding: 20px;
 }
 
-.sec-1 .banner img{
-    width: 40%;
-    height: 650px;
-    margin-left: 300px;
-    margin-top: 100px;
+.sec-1 .banner img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 20px;
 }
 
-.sec-1 .banner .banner-txt h1{
+.sec-1 .banner .banner-txt {
+    flex: 1;
+}
+
+.sec-1 .banner .banner-txt h1 {
     font-family: 'Dancing Script', sans-serif;
-    font-size: 100px;
-    margin: 10rem 3rem 15px;
+    font-size: 40px;
     color: #1FA383;
+    margin: 10px 0;
 }
 
-.sec-1 .banner .banner-txt p{
+.sec-1 .banner .banner-txt p {
     font-size: 16px;
-    margin-left: 20px;
+    margin: 10px;
 }
 
-.sec-2{
+.sec-2 {
     width: 100%;
     height: auto;
 }
 
-.sec-2 .art-1{
+.sec-2 .art-1 {
     width: 100%;
-    height: 700px;
+    height: auto;
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
     background-color: #efefef;
+    padding: 20px;
 }
 
-.sec-2 .art-1 .box-1{
-    width: 800px;
-    height: 600px;
+.sec-2 .art-1 .box-1 {
+    flex: 1;
+    max-width: 800px;
+    padding: 20px;
 }
 
-.box-1 h1{
-    font-size: 60px;
+.box-1 h1 {
+    font-size: 36px;
     color: #1FA383;
 }
 
-.box-1 p{
+.box-1 p {
     max-width: 600px;
-    font-size: 20px;
+    font-size: 16px;
     margin-top: 1rem;
 }
 
-.box-1 span{
+.box-1 span {
     color: #1FA383;
     font-family: 'Dancing Script', sans-serif;
-    font-size: 32px;
+    font-size: 24px;
 }
 
-.sec-2 .art-1 .box-2{
-    width: 600px;
-    height: 600px;
+.sec-2 .art-1 .box-2 {
+    flex: 1;
+    max-width: 600px;
+    height: 400px;
     background: url('img/mockup.png');
     border-radius: 4px;
     background-size: cover;
     background-repeat: no-repeat;
+    margin: 20px;
 }
 
-.sec-2 .art-2{
+.sec-2 .art-2 {
     width: 100%;
-    height: 700px;
+    height: auto;
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
     background-color: #1FA383;
+    padding: 20px;
 }
 
-.sec-2 .art-2 .box-3{
-    width: 900px;
-    height: 600px;
+.sec-2 .art-2 .box-3 {
+    flex: 1;
+    max-width: 900px;
+    height: 400px;
     background: url('img/remédio.jpg');
     border-radius: 4px;
     background-size: cover;
     background-repeat: no-repeat;
+    margin: 20px;
 }
 
-.sec-2 .art-2 .box-4{
-    width: 600px;
-    height: 600px;
+.sec-2 .art-2 .box-4 {
+    flex: 1;
+    max-width: 600px;
+    padding: 20px;
 }
 
-.box-4 h1{
-    font-size: 60px;
+.box-4 h1 {
+    font-size: 36px;
     color: #000;
 }
 
-.box-4 p{
+.box-4 p {
     max-width: 550px;
-    font-size: 20px;
+    font-size: 16px;
     margin-top: 1rem;
 }
-.box-4 span{
+
+.box-4 span {
     color: #fff;
     font-family: 'Dancing Script', sans-serif;
-    font-size: 32px;
+    font-size: 24px;
 }
 
-.titulo2{
+.titulo2 {
     font-size: 30px;
     color: #1FA383;
     text-align: center;
     margin-top: 2rem;
 }
 
-.sec-2 .art-3{
+.sec-2 .art-3 {
     width: 100%;
-    height: 880px;
+    height: auto;
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
 }
 
-.sec-2 .art-3 .box-5{
-    width: 780px;
-    height: 800px;
-}
-
-.box-5 img{
-    width: 780px;
-    height: 550px;
-}
-
-.box-5 h1{
-    font-size: 35px;
+.sec-2 .art-3 .box-5,
+.sec-2 .art-3 .box-6 {
+    flex: 1;
+    max-width: 780px;
+    padding: 20px;
     text-align: center;
 }
 
-.box-5 p{
-    font-size: 19px;
+.box-5 img,
+.box-6 img {
+    width: 100%;
+    max-width: 780px;
+    height: auto;
 }
 
-.sec-2 .art-3 .box-6{
-    width: 780px;
-    height: 800px;
-}
-
-.box-6 img{
-    width: 780px;
-    height: 550px;
-}
-
-.box-6 h1{
-    font-size: 35px;
+.box-5 h1,
+.box-6 h1 {
+    font-size: 28px;
     text-align: center;
 }
 
-.box-6 p{
-    font-size: 19px;
+.box-5 p,
+.box-6 p {
+    font-size: 16px;
 }
 
-.sec-3{
+.sec-3 {
     width: 100%;
     height: auto;
 }
 
-.titulo{
+.titulo {
     width: 100%;
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.titulo h1{
-    font-size: 50px;
+.titulo h1 {
+    font-size: 36px;
     font-family: 'Abel', sans-serif;
     font-weight: 300;
 }
 
-.sec-3 .cards{
+.sec-3 .cards {
     width: 100%;
-    height: 500px;
+    height: auto;
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
 }
 
-.sec-3 .cards .card{
-    width: 400px;
-    height: 820px;
+.sec-3 .cards .card {
+    flex: 1;
+    max-width: auto;
+    height: 800px;
     position: relative;
     display: flex;
     align-items: flex-end;
     transition: 0.5s ease-in-out;
-    justify-content: center;
+    margin: 10px;
 }
 
-.card:hover{
-    transform: translateY(-20px)
+.card:hover {
+    transform: translateY(-20px);
 }
 
-.card:before{
+.card:before {
     content: "";
     position: absolute;
     bottom: 15px;
@@ -287,16 +303,16 @@ header .topo .user{
     height: 100%;
     background: linear-gradient(to top, #146652, #1FA383, transparent);
     z-index: 2;
-    transition: 0.5 all;
+    transition: 0.5s all;
     opacity: 0;
     border-radius: 50px;
 }
 
-.card:hover::before{
+.card:hover::before {
     opacity: 1;
 }
 
-.card img{
+.card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -305,20 +321,187 @@ header .topo .user{
     left: 0;
 }
 
-.card .info{
+.card .info {
     position: relative;
     z-index: 3;
-    color: #fff;
+    color: black;
     opacity: 0;
     transform: translateY(30px);
-    transition: 0.5 linear;
-    font-size: 17px;
+    transition: 0.5s linear;
+    font-size: 16px;
+    margin-bottom: 200px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
-.card:hover .info{
+.card:hover .info {
     opacity: 1;
     transform: translateY(-30px);
-    max-width: 80%;
+    max-width: 98%;
     text-align: center;
 }
 
+footer {
+    background-color: #1FA383; /* Cor de fundo do rodapé */
+    color: #fff; /* Cor do texto */
+    padding: 20px 0; /* Espaçamento interno do rodapé */
+    text-align: center; /* Centraliza o texto */
+    font-family: 'Poppins', sans-serif; /* Fonte utilizada */
+}
+
+footer .container {
+    max-width: 1200px; /* Largura máxima do container */
+    margin: 0 auto; /* Centraliza o container horizontalmente */
+    display: flex; /* Utiliza flexbox */
+    flex-direction: column; /* Direção das flexões */
+    align-items: center; /* Centraliza os itens */
+    gap: 10px; /* Espaçamento entre os elementos */
+}
+
+footer .direitos {
+    font-size: 11px; /* Tamanho da fonte para "Todos os direitos reservados" */
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 10px; /* Espaçamento abaixo do texto */
+}
+
+footer .info {
+    text-align: left; /* Alinha o texto à esquerda */
+    display: flex; /* Utiliza flexbox */
+    flex-direction: column; /* Direção das flexões */
+    align-items: flex-start; /* Alinha os itens à esquerda */
+    margin-left: auto; /* Empurra o container para a esquerda */
+    margin-right: 0; /* Remove o espaço à direita */
+    max-width: 300px; /* Define uma largura máxima */
+}
+
+footer .info p {
+    margin: 5px 0; /* Espaçamento entre os parágrafos */
+    font-size: 14px; /* Tamanho da fonte */
+}
+
+/* Estilos Responsivos para Telas Pequenas */
+@media (max-width: 768px) {
+    footer .container {
+        flex-direction: column; /* Empilha os itens verticalmente */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    footer .info {
+        align-items: center; /* Centraliza os itens */
+        margin-left: 0; /* Remove a margem esquerda */
+        margin-right: 0; /* Remove a margem direita */
+        text-align: center; /* Centraliza o texto */
+    }
+}
+/* Media Queries para Responsividade */
+@media (max-width: 1200px) {
+    header .topo {
+        flex-direction: column;
+        height: auto;
+    }
+
+    header .topo .logo,
+    header .topo .nav,
+    header .topo .user {
+        margin: 10px 0;
+    }
+
+    header .topo .nav ul {
+        flex-direction: column;
+    }
+
+    header .topo .nav ul li {
+        margin: 10px 0;
+    }
+
+    .sec-1 .banner {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sec-1 .banner img {
+        max-width: 200px;
+    }
+
+    .sec-1 .banner .banner-txt h1 {
+        font-size: 60px;
+    }
+
+    .sec-2 .art-1,
+    .sec-2 .art-2,
+    .sec-2 .art-3 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sec-2 .art-1 .box-2,
+    .sec-2 .art-2 .box-3,
+    .sec-2 .art-3 .box-5,
+    .sec-2 .art-3 .box-6 {
+        max-width: 500px;
+        height: 300px;
+    }
+
+    .sec-3 .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .sec-1 .banner .banner-txt h1 {
+        font-size: 40px;
+    }
+
+    .box-1 h1,
+    .box-4 h1 {
+        font-size: 30px;
+    }
+
+    .box-1 p,
+    .box-4 p {
+        font-size: 14px;
+    }
+
+    .titulo h1 {
+        font-size: 28px;
+    }
+
+    .sec-3 .cards .card {
+        max-width: 300px;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    header .topo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .topo .nav ul {
+        flex-direction: column;
+    }
+
+    header .topo .nav ul li {
+        margin: 5px 0;
+    }
+
+    .sec-1 .banner .banner-txt h1 {
+        font-size: 24px;
+    }
+
+    .box-1 h1,
+    .box-4 h1 {
+        font-size: 24px;
+    }
+
+    .titulo h1 {
+        font-size: 20px;
+    }
+
+    .sec-3 .cards .card {
+        max-width: 250px;
+        height: auto;
+    }
+}
