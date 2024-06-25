@@ -1,0 +1,154 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.4s;
+}
+
+/* Estilos específicos para a página Sobre Nós */
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+header .topo {
+    width: 100%;
+    height: 75px;
+    background-color: #1FA383;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo h1 {
+    font-family: 'Dancing Script', sans-serif;
+    font-size: 25px;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.logo p {
+    font-size: 12px;
+    color: #fff;
+    margin-left: 10px;
+}
+
+header .topo .nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+header .topo .nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+header .topo .nav ul li a:hover {
+    font-size: 22px;
+}
+
+header .topo .user {
+    width: 64px;
+    height: 64px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.user i {
+    font-size: 40px;
+    text-decoration: none;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.sec-4 {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.titulo {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.titulo h1 {
+    font-size: 50px;
+    font-family: 'Abel', sans-serif;
+    font-weight: 300;
+    color: #1FA383;
+}
+
+.sobre {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.sobre h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.sobre p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.sobre ul {
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+.sobre ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.sobre ul li strong {
+    font-weight: bold;
+}
+
+.sobre h2 + p {
+    margin-top: -10px;
+}
+
+.sobre h2:nth-of-type(3) + ul {
+    margin-top: -10px;
+}
+
+.sobre h2:nth-of-type(4) + p {
+    margin-top: -10px;
+    margin-bottom: 50px;
+}
+
+/* Estilos para o rodapé */
+footer.rodape {
+    background-color: #1FA383;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center; /* Centraliza todo o conteúdo dentro do rodapé */
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.direitos {
+    font-size: 11px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .direitos {
+        text-align: left; /* Ajusta o texto para a esquerda em telas menores */
+    }
+}

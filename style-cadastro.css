@@ -12,7 +12,9 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #fff;
+    background-color: #1FA383;
+    background: #1FA383;
+
 }
 
 .caixa{
