@@ -1,0 +1,557 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=LXGW+WenKai+TC&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	
+	font-size: 100%;
+}
+#sos {
+	width: 800px;
+	justify-content: center;
+	margin: 1px auto;
+}
+:root {
+	--color-background-dark: #1FA383;
+	--color-background:#1FA383;
+	--color-background-light: rgb(255, 255, 255);
+	--color-background-light-2:#1fa383;
+	--color-background-light-3: #1fa383;
+	
+	--color-text: rgb(200, 200, 200);
+	--color-primary: rgb(255, 255, 255);
+	
+	--rgb-background-dark: 50, 50, 50;
+	--rgb-background-light-3: 90, 90, 90;
+	
+	--margin-between-items: 0.2rem;
+	
+	--transition-default-time: 0.2s;
+}
+
+body {
+	font-family: sans-serif;
+}
+
+html,
+body,
+#calendario-container {
+	min-height: 100vh;
+}
+
+/* ScrollBar Style */
+::-webkit-scrollbar {
+	width: 0.4rem;
+}
+::-webkit-scrollbar-track {
+	background-color: var(--color-background-light-3);
+}
+::-webkit-scrollbar-thumb {
+	background-color: var(--color-primary);
+}
+
+.principal{
+	background-color: ;
+	margin-top: 70px;
+	width: 100%;
+	height: 380px;
+}
+
+/* ELEMENTOS GERAIS */
+/* Botões */
+.calendario .btn-primary {
+	background-color: inherit;
+	color: var(--color-primary);
+	
+	padding: 0.8rem 1.4rem;
+	font-weight: 700;
+	
+	transition:
+		background-color var(--transition-default-time),
+		color var(--transition-default-time);
+}
+.calendario .btn-primary:hover {
+	background-color: var(--color-background-light-3);
+}
+
+/* Dropdown */
+.calendario .dropdown-box {
+	position: relative;
+}
+.calendario .dropdown-box .drop {
+	position: absolute;
+	vertical-align: middle;
+	
+	/* Centralizar com relação ao botão */
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
+	
+	background-color: rgba(var(--rgb-background-dark), 0.9);
+	
+	max-height: 0;
+	overflow-y: scroll;
+	z-index: 80;
+	
+	-webkit-transition: max-height 0.6s;
+	-moz-transition: max-height 0.6s;
+	-ms-transition: max-height 0.6s;
+	-o-transition: max-height 0.6s;
+	transition: max-height 0.6s;
+}
+.calendario .dropdown-box .drop li button {
+	width: 100%;
+}
+/*
+.calendario .dropdown-box .drop li button.selected {
+	background-color: red;
+}
+*/
+.calendario .dropdown-box .drop li button:hover {
+	background-color: var(--color-background-light);
+}
+.calendario .dropdown-box:hover .trigger {
+	background-color: var(--color-background-light-3);
+}
+.calendario .dropdown-box:hover .drop {
+	max-height: 19.1rem;
+}
+/* ScrollBar Style */
+.calendario .dropdown-box .drop::-webkit-scrollbar {
+	width: 0.2rem;
+}
+
+
+
+/* CONTAINER */
+#calendario-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	background-color: var(--color-background);
+	color: var(--color-text);
+}
+
+
+
+/* CALENDARIO */
+.calendario {
+	background-color: var(--color-background-light);
+	
+	width: 90rem;
+}
+.calendario button {
+	border: none;
+	outline: none; /*1px dotted var(--color-primary);*/
+	cursor: pointer;
+}
+
+
+
+/* HEADER */
+.calendario header {
+display: flex;
+	position: relative;
+
+	background-color: var(--color-background-light-2);
+	color: var(--color-primary);
+	
+	text-align: center;
+}
+/* Botões da direita */
+.calendario header .box-left {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	display: flex;
+
+	height: 100%;
+}
+.calendario header .box-left .btn-open-year {
+	margin-left: 0.2rem;
+}
+/*
+.calendario header .box-left .select-year {
+	scroll-snap-type: x mandatory;
+}
+.calendario header .box-left .select-year li {
+	scroll-snap-align: center;
+}
+*/
+/* Botão lateral */
+.calendario header .box-left .inp-date {
+	background-color: var(--color-background-light-3);
+	color: var(--color-primary);
+	
+	width: 3rem;
+	height: 100%;
+	z-index: 90;
+
+	font-size: 1.6rem;
+
+	transition: transform var(--transition-default-time);
+}
+.calendario header .box-left .inp-date:hover {
+	transform: scale(1.2);
+}
+/* Centro do topo */
+.calendario header .header-content {
+	display: inline-flex;
+	
+	margin: 0 auto;
+}
+/* Meses */
+/* Botões "<" e ">" */
+.calendario header .header-content .btn-slide-month {
+	z-index: 2;
+	
+	transition:
+		background-color var(--transition-default-time),
+		color var(--transition-default-time);
+}
+
+
+
+/* CONTEÚDO */
+.calendario .content {
+	padding: 0.6rem;
+}
+
+/* Descrição */
+.calendario .content .desc {
+	display: flex;
+}
+.calendario .content .desc .box-dia-semana {
+	width: calc(100% / 7);
+}
+.calendario .content .desc .box-dia-semana .dia-semana {
+	background-color: var(--color-background-light-2);
+	color: var(--color-primary);
+
+	padding: 0.8rem;
+	margin: var(--margin-between-items);
+	font-weight: 700;
+	text-align: center;
+}
+
+/* Dias */
+.calendario .content .dias {
+	display: flex;
+	flex-wrap: wrap;
+}
+.calendario .content .dias .dia-null,
+.calendario .content .dias .dia-box {
+	z-index: 1;
+	width: calc(100% / 7);
+}
+.calendario .content .dias .dia-box .dia-atual {
+	border: 1px solid var(--color-primary);
+}
+.calendario .content .dias .dia-box .dia {
+	position: relative;
+
+	background-color: var(--color-background-light-2);
+	
+	height: 8rem;
+	padding: 1rem;
+	margin: var(--margin-between-items);
+	
+	transition:
+		background-color var(--transition-default-time),
+		transform var(--transition-default-time);
+	cursor: pointer;
+}
+.calendario .content .dias .dia-box .dia:hover {
+	background-color: var(--color-background-light-3);
+	
+	transform: scale(0.95);
+}
+.calendario .content .dias .dia-box .dia .num {
+	font-weight: 700;
+}
+.calendario .content .dias .dia-box .dia .qtd-tarefas {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 20;
+
+	display: flex;
+	align-items:center;
+    justify-content:center;
+
+	background-color: var(--color-primary);
+	color: var(--color-background-dark);
+
+	width: 2rem;
+	height: 2rem;
+	padding: 0.4rem;
+	margin: 0 0 0.4rem 0.4rem;
+	border-radius: 2rem;
+	font-weight: 700;
+
+	transition: width 0.2s;
+}
+.calendario .content .dias .dia-box .dia:hover .qtd-tarefas {
+	width: 40rem;
+}
+
+
+footer {
+    background-color: #1FA383; /* Cor de fundo do rodapé */
+    color: #fff; /* Cor do texto */
+    padding: 20px 0; /* Espaçamento interno do rodapé */
+    text-align: center; /* Centraliza o texto */
+    font-family: 'Poppins', sans-serif; /* Fonte utilizada */
+}
+
+footer .container {
+    max-width: 1200px; /* Largura máxima do container */
+    margin: 0 auto; /* Centraliza o container horizontalmente */
+    display: flex; /* Utiliza flexbox */
+    flex-direction: column; /* Direção das flexões */
+    align-items: center; /* Centraliza os itens */
+    gap: 10px; /* Espaçamento entre os elementos */
+}
+
+footer .direitos {
+    font-size: 11px; /* Tamanho da fonte para "Todos os direitos reservados" */
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 10px; /* Espaçamento abaixo do texto */
+}
+
+footer .info {
+    text-align: left; /* Alinha o texto à esquerda */
+    display: flex; /* Utiliza flexbox */
+    flex-direction: column; /* Direção das flexões */
+    align-items: flex-start; /* Alinha os itens à esquerda */
+    margin-left: auto; /* Empurra o container para a esquerda */
+    margin-right: 0; /* Remove o espaço à direita */
+    max-width: 300px; /* Define uma largura máxima */
+}
+
+footer .info p {
+    margin: 5px 0; /* Espaçamento entre os parágrafos */
+    font-size: 14px; /* Tamanho da fonte */
+}
+
+/* Estilos Responsivos para Telas Pequenas */
+@media (max-width: 768px) {
+    footer .container {
+        flex-direction: column; /* Empilha os itens verticalmente */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    footer .info {
+        align-items: center; /* Centraliza os itens */
+        margin-left: 0; /* Remove a margem esquerda */
+        margin-right: 0; /* Remove a margem direita */
+        text-align: center; /* Centraliza o texto */
+    }
+}
+
+
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.4s;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header .topo {
+    width: 100%;
+    height: 75px;
+    background-color: #1FA383;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+header .topo .logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    font-family: 'Dancing Script', sans-serif;
+    font-size: 25px;
+    color: #fff;
+    margin: 0;
+}
+
+.logo p {
+    font-size: 12px;
+    color: #fff;
+    margin-left: 10px;
+}
+
+header .topo .nav ul {
+    display: flex;
+    list-style: none;
+}
+
+header .topo .nav ul li {
+    margin: 0 10px;
+}
+
+header .topo .nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+header .topo .nav ul li a:hover {
+    font-size: 22px;
+}
+
+header .topo .user {
+    display: flex;
+    align-items: center;
+}
+
+.user i {
+    font-size: 40px;
+    text-decoration: none;
+    color: #fff;
+    margin-top: 10px;
+}
+
+footer {
+	margin-top: 60px;
+    background-color: #1FA383;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer .direitos {
+    font-size: 11px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+
+.principal {
+    display: flex;
+}
+
+.divone, .divtwo {
+    flex: 1;
+    padding: 20px;
+}
+
+.lista-botoes {
+    background-color: #1FA383;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.lista-botoes .btn {
+    flex: 1 0 40%; /* Ocupa 40% da largura disponível */
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    background-color: #146652;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.lista-botoes .btn:hover {
+    background-color: #1FA383;
+}
+
+.lista-remedios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.remedio {
+    flex: 1 0 30%; /* Ocupa 30% da largura disponível */
+    background-color: #efefef;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.remedio h3 {
+    font-size: 18px;
+    color: #1FA383;
+    margin-bottom: 5px;
+}
+
+.remedio p {
+    font-size: 14px;
+    color: #333;
+}
+
+.usuario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-idoso {
+    text-align: center;
+}
+
+.info-idoso img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.info-idoso h2 {
+    font-size: 24px;
+    color: #1FA383;
+    margin-bottom: 5px;
+}
+
+.info-idoso p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 3px;
+}
