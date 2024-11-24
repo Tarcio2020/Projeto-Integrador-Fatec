@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="style-chat.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="caixa">
+        <form action="#" id="loginForm">
+            <h1>Conectar ao Chat</h1>
+            <div class="input">
+                <input type="text" id="userId" placeholder="ID do Usuário" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input">
+                <input type="text" id="receiverId" placeholder="ID do Destinatário" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <button type="submit" class="btn">Conectar</button>
+        </form>
+        <div class="chat" id="chat" style="display:none;">
+            <h2>Chat</h2>
+            <div class="messages" id="messages">
+                <!-- As mensagens do chat aparecerão aqui -->
+            </div>
+            <textarea id="message" placeholder="Digite sua mensagem..."></textarea>
+            <button id="sendBtn">Enviar</button>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const loginForm = document.getElementById("loginForm");
+            const userIdInput = document.getElementById("userId");
+            const receiverIdInput = document.getElementById("receiverId");
+            const chatDiv = document.getElementById("chat");
+            const messagesDiv = document.getElementById("messages");
+            const messageInput = document.getElementById("message");
+            const sendButton = document.getElementById("sendBtn");
+
+            let websocket;
+            let userId = null; // Variável para armazenar o id do usuário conectado
+
+            loginForm.addEventListener("submit", (event) => {
+                event.preventDefault();
+
+                userId = userIdInput.value.trim();
+                const receiverId = receiverIdInput.value.trim();
+
+                if (userId && receiverId) {
+                    const url = `ws://localhost:8080/chat?userId=${userId}`;
+                    websocket = new WebSocket(url);
+
+                    websocket.onopen = () => {
+                        console.log("Conectado ao WebSocket.");
+                        loginForm.style.display = 'none'; // Esconde o formulário de login
+                        chatDiv.style.display = 'block'; // Mostra a área de chat
+                    };
+
+                    websocket.onmessage = (event) => {
+                        const messageData = JSON.parse(event.data);
+                        console.log("Mensagem recebida:", messageData); // Verifica o conteúdo da mensagem
+                        displayMessage(messageData); // Exibe a mensagem no chat
+                    };
+
+                    websocket.onerror = (error) => {
+                        console.error("Erro no WebSocket:", error);
+                    };
+
+                    websocket.onclose = () => {
+                        console.log("Desconectado do WebSocket.");
+                    };
+                }
+            });
+
+            sendButton.addEventListener("click", () => {
+                const messageText = messageInput.value.trim();
+                if (messageText && websocket && websocket.readyState === WebSocket.OPEN) {
+                    const message = {
+                        remetenteId: userId, // Envia o id do usuário conectado
+                        destinatarioId: receiverIdInput.value.trim(),
+                        conteudo: messageText
+                    };
+
+                    websocket.send(JSON.stringify(message)); // Envia a mensagem como JSON
+                    messageInput.value = ''; // Limpa o campo de mensagem
+                    displayMessage(message);
+                }
+            });
+
+            function displayMessage(messageData) {
+                const messageElement = document.createElement("div");
+                messageElement.classList.add("message");
+                
+                // Formatação da mensagem com o conteúdo, remetente e destinatário
+                messageElement.innerHTML = `<strong>De:</strong> ${messageData.remetenteId} <strong>Para:</strong> ${messageData.destinatarioId} <br><p>${messageData.conteudo}</p>`;
+                
+                messagesDiv.appendChild(messageElement);
+                messagesDiv.scrollTop = messagesDiv.scrollHeight; // Rolagem automática para a última mensagem
+            }
+        };
+    </script>
+</body>
+</html>
